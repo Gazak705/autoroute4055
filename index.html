@@ -1,85 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Autoroutes</title>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <meta name="theme-color" content="#1a1a2e">
+        <title>Autoroutes</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-<style>
+    <body>
 
-body{
-font-family: Arial;
-text-align:center;
-}
+        <h1>Autoroutes</h1>
 
-.container{
-display:flex;
-justify-content:center;
-gap:80px;
-margin-top:40px;
-}
+        <div class="container">
 
-table{
-border-collapse:collapse;
-width:200px;
-}
+        <div class="column">
+            <table id="a40">
+                <tr><th>Autoroute 40</th></tr>
+            </table>
+            <div class="column-fill" aria-hidden="true"></div>
+        </div>
 
-th{
-background:#e0e0e0;
-padding:10px;
-font-size:22px;
-}
+        <div class="column">
+            <table id="a55">
+                <tr><th>Autoroute 55</th></tr>
+            </table>
+            <div class="column-fill" aria-hidden="true"></div>
+        </div>
 
-td{
-border:1px solid #ccc;
-padding:8px;
-}
+        </div>
 
-</style>
-</head>
-
-<body>
-
-<h1>Autoroutes</h1>
-
-<div class="container">
-
-<table id="a40">
-<tr><th>Autoroute 40</th></tr>
-</table>
-
-<table id="a55">
-<tr><th>Autoroute 55</th></tr>
-</table>
-
-</div>
-
-<script>
-
-let table40 = document.getElementById("a40");
-let table55 = document.getElementById("a55");
-
-for(let km=187; km<=210; km++){
-let row = table40.insertRow();
-let cell = row.insertCell();
-cell.textContent = km;
-}
-
-for(let km=180; km<=196; km++){
-let row = table55.insertRow();
-let cell = row.insertCell();
-
-if(km === 180){
-let link = document.createElement("a");
-link.href="https://maps.app.goo.gl/axWTHwzAGyA29Bd18?g_st=ic";
-link.textContent = km;
-cell.appendChild(link);
-}else{
-cell.textContent = km;
-}
-
-}
-
-</script>
-
-</body>
+        <script src="app.js"></script>
+    </body>
 </html>

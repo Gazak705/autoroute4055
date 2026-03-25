@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(165deg, #f8f9fc 0%, #eef1f8 100%);
+    color: #1a1a2e;
+    padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1.25rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+}
+
+h1 {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(0.5rem, 2.5vw, 1.25rem);
+    width: 100%;
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+/* Même hauteur pour les deux cartes (hauteur = colonne la plus longue) */
+.column {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(26, 26, 46, 0.08);
+}
+
+.column table {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+/* Remplit l'espace sous le tableau le moins rempli */
+.column-fill {
+    flex: 1 1 auto;
+    min-height: 0;
+    background: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    background: transparent;
+}
+
+th {
+    background: linear-gradient(180deg, #2d2d44 0%, #1a1a2e 100%);
+    color: #fff;
+    padding: 0.875rem 1rem;
+    font-size: clamp(1rem, 3.5vw, 1.125rem);
+    font-weight: 600;
+}
+
+td {
+    border: 1px solid #e8eaf0;
+    padding: 0.875rem 0.75rem;
+    font-size: clamp(1.05rem, 4vw, 1.2rem);
+    font-weight: 600;
+    min-height: 56px;
+    vertical-align: middle;
+}
+
+tr:nth-child(even) td {
+    background: #fafbfe;
+}
+
+/* Cellule avec lien : toute la case est cliquable, pas seulement le chiffre */
+td.cell-link {
+    padding: 0;
+}
+
+td.cell-link a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    width: 100%;
+    padding: 0.875rem 0.75rem;
+    color: #1d4ed8;
+    font-weight: 700;
+    font-size: clamp(1.05rem, 4vw, 1.2rem);
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+}
+
+td.cell-link a:active {
+    background: rgba(37, 99, 235, 0.12);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    td.cell-link a {
+        transition: background 0.15s ease;
+    }
+}
+
+td.cell-link a:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: -3px;
+}
