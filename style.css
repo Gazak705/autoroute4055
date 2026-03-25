@@ -6,22 +6,27 @@ text-align:center;
 .container{
 display:flex;
 justify-content:center;
-gap:80px;
+gap:60px;
 margin-top:40px;
 }
 
-table{
-border-collapse:collapse;
-width:200px;
+.colonne{
+display:flex;
+flex-direction:column;
+gap:6px;
 }
 
-th{
-background:#e0e0e0;
-padding:10px;
-font-size:22px;
-}
-
-td{
-border:1px solid #ccc;
+.km{
+background:#1f8f2e;
+color:white;
+border:none;
 padding:8px;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+width:80px;
+}
+
+.km:hover{
+background:#146620;
 }
