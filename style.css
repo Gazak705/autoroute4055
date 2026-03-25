@@ -46,3 +46,9 @@ cursor:pointer;
 .km:hover{
 background:#146620;
 }
+
+p{
+font-size:12px;
+color:#666;
+margin-top:50px;
+}
