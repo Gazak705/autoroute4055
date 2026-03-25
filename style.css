@@ -46,3 +46,11 @@ cursor:pointer;
 .km:hover{
 background:#146620;
 }
+
+.signature{
+position:fixed;
+bottom:10px;
+right:10px;
+font-size:12px;
+color:#666;
+}
